@@ -7,8 +7,10 @@ tags: $:/tags/Macro
 <$list filter="$tabsList$" variable="currentTab">
 <$button set=<<qualify "$state$">> setTo=<<currentTab>> default="$default$" selectedClass="tc-tab-selected">
 <$set name="tv-wikilinks" value="no">
+<$transclude tiddler=<<currentTab>> field="tab-caption">
 <$transclude tiddler=<<currentTab>> field="caption">
 <$macrocall $name="currentTab" $type="text/plain" $output="text/plain"/>
+</$transclude>
 </$transclude>
 </$set>
 </$button>
